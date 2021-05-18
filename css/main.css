@@ -32,7 +32,29 @@ header h1 {
 .row {
     position: relative;
 }
-.white-line::before {
+.white-line {
+    border-top: 2px solid #777;
+}
+.row h3 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.2rem;
+}
+    .row .sec-2 {
+        background: #dfdee7 !important;
+    }
+        .row:first-child .sec-2 {
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+        .timeline-final .sec-2 {
+            border-radius: 0 0 0.5rem 0.5rem;
+        }
+    .row .sec-2 h3 {
+        color: #5b5779; 
+    }
+    .row .sec-4 h3 {
+        color: #45809b;
+    }
+/* .white-line::before {
     content: '';
     width: 120px;
     height: 2px;
@@ -56,7 +78,7 @@ header h1 {
     top: -13px;
     left: calc(50% - 13px);
     color: #fff;
-}
+} */
 .row.extended .col {
     padding-bottom: 5rem !important;
 }
@@ -149,6 +171,10 @@ section {
         border: 1px solid #dcf0f1;
         color: #195774;
     }
+.legend {
+    border-top: 1px dashed rgb(183, 208, 212);
+    padding-top: 2rem;
+}
 .legend p {
     line-height: 2rem;
 }
