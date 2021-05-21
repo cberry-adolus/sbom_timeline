@@ -231,7 +231,9 @@
                         <p>AUGUST 10 2021</p>
                         <span>90 days</span>
                         <div>
-                            <i class="fas fa-flag fa-lg"></i>
+                            <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="If you want to give input on contract language, mark this date!">
+                                <i class="fas fa-calendar-times fa-2x"></i>
+                            </span>
                         </div>
                     </div>
                     <div class="col right">
@@ -270,7 +272,9 @@
                         <p>SEPTEMBER 9 2021</p>
                         <span>120 days</span>
                         <div>
-                            <i class="fas fa-flag fa-lg"></i>
+                            <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="If you want to give input on contract language, mark this date!">
+                                <i class="fas fa-calendar-times fa-2x"></i>
+                            </span>
                         </div>
                     </div>
                     <div class="col pb-5 right">
@@ -301,7 +305,9 @@
                         <p>SEPTEMBER 24 2021</p>
                         <span>135 days</span>
                         <div>
-                            <i class="fas fa-flag fa-lg"></i>
+                            <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="If you want to give input on contract language, mark this date!">
+                                <i class="fas fa-calendar-times fa-2x"></i>
+                            </span>
                         </div>
                     </div>
                     <div class="col pb-5 right">
@@ -504,11 +510,21 @@
             </div>
         </section>
         <footer>
-            <div class="p-5">
-                <p>&copy; 2021 aDolus Technology Inc.</p>
+            <div class="row p-5">
+                <div class="col">
+                    <p>&copy; 2021 aDolus Technology Inc.</p>
+                </div>
+                <div class="col text-end">
+                    <a href="#top">Back to top<i class="fas fa-chevron-up"></i></a>
+                </div>
             </div>
         </footer>
         <script type="text/javascript">
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            });
+
             var scrollpos = function(){return window.scrollY};
             const shadow = document.getElementsByClassName('shadow-cover')[0];
 
