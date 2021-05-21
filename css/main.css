@@ -27,7 +27,33 @@ header h1 {
     position: relative;
 }
 .white-line {
+    /* border-top: 2px solid #777; */
+    position: relative;
+}
+.white-line:before {
+    content: '•';
+    font-size: 64px;
+    color: #fff;
+    background: #777;
+    width: 36px;
+    height: 36px;
+    line-height: 37px;
+    border-radius: 36px;
+    position: absolute;
+    left: calc(50% - 18px);
+    top: -18px;
+    z-index: 999;
+}
+.white-line:after {
+    content: '';
     border-top: 2px solid #777;
+    position: absolute;
+    width: 50%;
+    top: 0;
+    left: 50%;
+}
+.white-line p {
+    padding-top: 2rem;
 }
 .row h3 {
     font-family: 'Roboto Slab', serif;
@@ -69,12 +95,15 @@ header {
     padding: 3rem;
     margin: 0 auto;
 }
-#page-wrap .col.left {
+#page-wrap .col {
     background: #dcf0f1;
 }
 #page-wrap .col.timeline {
     text-align: center;
     background: #111;
+}
+.timeline span {
+    cursor: help;
 }
 #page-wrap .col.timeline p {
     font-weight: 700;
@@ -87,28 +116,27 @@ header {
     margin: 0;
 }
 #page-wrap .col.announcement {
-    border-radius: 0 50px 0 0;
+    border-radius: 50px 0 0 0;
 }
 #page-wrap .col.end-cap {
-    border-radius: 0 0 50px 0;
+    border-radius: 0 0 0 50px;
 }
 #page-wrap .col.announcement img {
     max-width: 120px;
 }
-#page-wrap .left.line {
+#page-wrap .right.line {
     border-top: 2px solid #111;
 }
 .card {
     width: auto;
     border: none;
     position: relative;
-    margin-top: 1rem;
-    margin-left: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    margin: 2rem 0 2rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px;
 }
 .card:after, .card:before {
-	right: 100%;
-	top: 50%;
+	bottom: 100%;
+	left: 10%;
 	border: solid transparent;
 	content: "";
 	height: 0;
@@ -118,15 +146,15 @@ header {
 }
 .card:after {
 	border-color: rgba(255, 255, 255, 0);
-	border-right-color: #fff;
+	border-bottom-color: #fff;
 	border-width: 5px;
-	margin-top: -5px;
+	margin-left: -5px;
 }
 .card:before {
 	border-color: rgba(255, 255, 255, 0);
-	border-right-color: #fff;
+	border-bottom-color: #fff;
 	border-width: 11px;
-	margin-top: -11px;
+	margin-left: -11px;
 }
 .card h4 {
     margin: 0;
