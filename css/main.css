@@ -4,53 +4,79 @@ body, html {
     font-size: 0.9rem;
     background: #fff;
 }
-    header img {
-        height: 30px;
-        width: auto;
-    }
-    header a i {
-        font-size: 1rem;
-        font-weight: 900;
-        margin: 0 1rem 0 0;
-    }
+span.timeline-acronym {
+  border-bottom: 2px dotted #2995bc;
+  cursor: help;
+}
+header img {
+  height: 30px;
+  width: auto;
+  display: inline-block;
+  margin-right: 0.8rem;
+}
 header h1 {
     font-family: 'Roboto Slab', serif;
     font-weight: 600;
     color: #444;
+    text-align: center;
 }
-    header h2 {
-        font-size: 1.4rem;
-        font-weight: 400;
-        color: #777;
-    }
+a {
+    color: #2995bc !important;
+}
 .row {
     position: relative;
+    
+}
+.col.right {
+    width: 15%;
+    transition: all .1s ease-in-out;
+}
+.timeline {
+    width: 10%;
+}
+.col.right.col-sm-1 {
+    width: 10%;
+}
+.col.right p, 
+.col.right ul, 
+.col.right .card,
+.col.right h3:last-child {
+    display: none;
+}
+.row .expanded {
+    flex-grow: 2;
+}
+.row .expanded h3:last-child, .row .expanded p, .row .expanded ul, .row .expanded .card {
+    display: block;
 }
 .white-line {
-    /* border-top: 2px solid #777; */
     position: relative;
 }
-.white-line:before {
-    content: '•';
-    font-size: 64px;
+.white-line::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: "\f111";
+    font-size: 12px;
     color: #fff;
     background: #777;
     width: 36px;
     height: 36px;
-    line-height: 37px;
+    line-height: 36px;
     border-radius: 36px;
     position: absolute;
     left: calc(50% - 18px);
     top: -18px;
-    z-index: 999;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
 }
 .white-line:after {
     content: '';
     border-top: 2px solid #777;
     position: absolute;
-    width: 50%;
+    width: 45%;
     top: 0;
-    left: 50%;
+    left: 55%;
 }
 .white-line p {
     padding-top: 2rem;
@@ -60,11 +86,47 @@ header h1 {
     font-size: 1.2rem;
 }
     .row .sec-2 {
-        background: #dfdee7 !important;
+        background: rgba(223,222,231,1);
+        background: linear-gradient(90deg, rgba(223,222,231,1) 0%, rgb(180, 178, 201) 100%);
     }
+        .row .sec-2.expanded {
+            background: #dfdee7;
+        }
     .row .sec-3 {
-        background: #c8d4e4 !important;
+        background: rgba(200,212,228,1);
+        background: linear-gradient(90deg, rgba(200,212,228,1) 0%, rgb(167, 182, 201) 100%);
     }
+        .row .sec-3.expanded {
+            background: #c8d4e4;
+        }
+    .row .sec-4 {
+        background: rgba(220,240,241,1);
+        background: linear-gradient(90deg, rgba(220,240,241,1) 0%, rgb(183, 216, 218) 100%);
+    }
+        .row .sec-4.expanded {
+            background: #dcf0f1;
+        }
+    .row .sec-5 {
+        background: rgba(240,236,236,1);
+        background: linear-gradient(90deg, rgba(240,236,236,1) 0%, rgb(218, 206, 206) 100%);
+    }
+        .row .sec-5.expanded {
+            background: #f0ecec;
+        }
+    .row .sec-6 {
+        background: rgba(224,228,220,1);
+        background: linear-gradient(90deg, rgba(224,228,220,1) 0%, rgb(194, 202, 186) 100%);
+    }
+        .row .sec-6.expanded {
+            background: #e0e4dc;
+        }
+    .row .sec-7 {
+        background: rgba(176,220,220,1);
+        background: linear-gradient(90deg, rgba(176,220,220,1) 0%, rgb(145, 194, 194) 100%);
+    }
+        .row .sec-7.expanded {
+            background: #b0dcdc;
+        }
     .row .sec-3 h3 {
         color: #5b7596;
     }
@@ -74,6 +136,31 @@ header h1 {
     .row .sec-4 h3 {
         color: #45809b;
     }
+    .row .sec-5 h3 {
+        color: #7c7878;
+    }
+    .row .sec-6 h3 {
+        color: #6c795f;
+    }
+    .row .sec-7 h3 {
+        color: #355f5f;
+    }
+    .top-col {
+        cursor: pointer;
+        position: relative;
+    }
+    .top-col:before {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        content: "\f337";
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: #fff;
+    }
+    .top-col.expanded:before {
+        content: none;
+    }
     .sec-3.top-col {
         border-top: 10px solid #4d6483;
     }
@@ -82,6 +169,15 @@ header h1 {
     }
     .sec-4.top-col {
         border-top: 10px solid #5e9dbb;
+    }
+    .sec-5.top-col {
+        border-top: 10px solid #666161;
+    }
+    .sec-6.top-col {
+        border-top: 10px solid #6c795f;
+    }
+    .sec-7.top-col {
+        border-top: 10px solid #355f5f;
     }
 .row.extended .col {
     padding-bottom: 5rem !important;
@@ -94,9 +190,6 @@ header {
     width: 100%;
     padding: 3rem;
     margin: 0 auto;
-}
-#page-wrap .col {
-    background: #dcf0f1;
 }
 #page-wrap .col.timeline {
     text-align: center;
@@ -115,12 +208,6 @@ header {
     color: #999;
     margin: 0;
 }
-#page-wrap .col.announcement {
-    border-radius: 50px 0 0 0;
-}
-#page-wrap .col.end-cap {
-    border-radius: 0 0 0 50px;
-}
 #page-wrap .col.announcement img {
     max-width: 120px;
 }
@@ -132,11 +219,13 @@ header {
     border: none;
     position: relative;
     margin: 2rem 0 2rem 1rem;
+    border: 0 !important;
+    border-radius: 3rem !important;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 12px;
 }
 .card:after, .card:before {
 	bottom: 100%;
-	left: 10%;
+	left: 50%;
 	border: solid transparent;
 	content: "";
 	height: 0;
@@ -158,9 +247,16 @@ header {
 }
 .card h4 {
     margin: 0;
-    padding: 0;
-    font-weight: 700;
-    font-size: 1rem;
+    padding: 0 1rem;
+    font-weight: 400;
+    font-size: 1.1rem;
+    font-family: "Permanent Marker", cursive;
+}
+.card h4 svg {
+  display: inline-block;
+  width: 12px;
+  height: auto; 
+  color: #000;
 }
 section {
     background: rgb(119,119,119);
@@ -206,7 +302,7 @@ section {
     background: rgba(255,255,255,0.4);
 }
 .legend span {
-    width: 60px;
+    width: 70px;
     font-family: 'Roboto Mono', monospace;
     font-weight: 700;
     display: inline-block;
