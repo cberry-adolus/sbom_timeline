@@ -198,6 +198,11 @@ header {
 .timeline span {
     cursor: help;
 }
+#page-wrap .col.timeline svg,
+#page-wrap .col.timeline i {
+  color: #53B4BD;
+  margin: 0 0.5rem;
+}
 #page-wrap .col.timeline p {
     font-weight: 700;
     color: #fff;
