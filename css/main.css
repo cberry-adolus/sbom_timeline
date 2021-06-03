@@ -214,7 +214,8 @@ header {
     margin: 0;
 }
 #page-wrap .col.announcement img {
-    max-width: 120px;
+    max-width: 70%;
+    height: auto;
 }
 #page-wrap .right.line {
     border-top: 2px solid #111;
