@@ -49,28 +49,21 @@ a {
 .row .expanded h3:last-child, .row .expanded p, .row .expanded ul, .row .expanded .card {
     display: block;
 }
-.white-line {
+.date-marker {
     position: relative;
 }
-.white-line::before {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    content: "\f111";
-    font-size: 12px;
-    color: #fff;
-    background: #777;
-    width: 36px;
-    height: 36px;
-    line-height: 36px;
-    border-radius: 36px;
+.date-marker::before {
+    content: '';
+    box-shadow: #777 0 0 0 5px;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 24px;
     position: absolute;
-    left: calc(50% - 18px);
-    top: -18px;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
+    left: calc(50% - 8px);
+    top: -8px;
 }
-.white-line:after {
+.date-marker:after {
     content: '';
     border-top: 2px solid #777;
     position: absolute;
@@ -78,9 +71,10 @@ a {
     top: 0;
     left: 55%;
 }
-.white-line p {
+.date-marker p {
     padding-top: 2rem;
 }
+
 .row h3 {
     font-family: 'Roboto Slab', serif;
     font-size: 1.2rem;
@@ -127,22 +121,22 @@ a {
         .row .sec-7.expanded {
             background: #b0dcdc;
         }
-    .row .sec-3 h3 {
-        color: #5b7596;
-    }
-    .row .sec-2 h3 {
+    .row .sec-2 h3, .row .sec-2 h6 {
         color: #77729c;
     }
-    .row .sec-4 h3 {
+    .row .sec-3 h3, .row .sec-3 h6 {
+        color: #5b7596;
+    }
+    .row .sec-4 h3, .row .sec-4 h6 {
         color: #45809b;
     }
-    .row .sec-5 h3 {
+    .row .sec-5 h3, .row .sec-5 h6 {
         color: #7c7878;
     }
-    .row .sec-6 h3 {
+    .row .sec-6 h3, .row .sec-6 h6 {
         color: #6c795f;
     }
-    .row .sec-7 h3 {
+    .row .sec-7 h3, .row .sec-7 h6 {
         color: #355f5f;
     }
     .top-col {
@@ -160,6 +154,15 @@ a {
     }
     .top-col.expanded:before {
         content: none;
+    }
+    .top-col h6 {
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+    .top-col.expanded h6 {
+        display: none;
     }
     .sec-3.top-col {
         border-top: 10px solid #4d6483;
@@ -219,6 +222,18 @@ header {
 }
 #page-wrap .right.line {
     border-top: 2px solid #111;
+    position: relative;
+}
+#page-wrap .line-marker::before {
+    content: '';
+    background: #111;
+    box-shadow: rgba(0,0,0,0.2) 0 0 0 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    position: absolute;
+    left: calc(50% - 6px);
+    top: -7px;
 }
 .card {
     width: auto;
