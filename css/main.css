@@ -30,6 +30,10 @@ a {
 .col.right {
     width: 15%;
     transition: all .1s ease-in-out;
+    cursor: pointer;
+}
+.col.right.expanded {
+    cursor: auto;
 }
 .timeline {
     width: 10%;
